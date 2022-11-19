@@ -74,8 +74,21 @@ emailjs.init('i-nHY1O9s5qdms7b9')
 function submitalert (event) {
     const btn = document.getElementById('submit');
     btn.value = 'Sending...'
+    if ($("#name").val() == "") {
+        alert(" Please Enter your Name, Field is mandatory! ");
+        return false;
+    }
+    if ($("#email").val() == "") {
+        alert(" Please Enter a valid Email Address like => xyz@gmail.com, Field is mandatory! ");
+        return false;
+    }
+    if ($("#message").val() == "") {
+        alert("Please write your message here, Field is mandatory! ");
+        return false;
+    }
+
         if(confirm("Do you want to sent Feedback !")) {
-            console.log(location);
+            alert(" I RECIEVE YOUR FEEDBACK !, THANK YOU .");
             emailjs.send("service_8sg4not","template_iyusbc7",{
             to_name: $("#name").val(),
             from_name: $("#email").val(),
