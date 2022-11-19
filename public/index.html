@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <title>my-First-Website</title>
+</head>
+<body>
+    <nav class="navbar" >
+        <div class="navlist">
+            <ul class="list">
+                <a href="aboutme.html"><li>About</li></a>
+                <a href="certificate.html"><li>Certificates</li></a>
+                <a href="documents/AnkurGandhi_SoftwareDeveloper.pdf"><li>Resume</li></a>
+              
+            </ul>
+        </div>
+    </nav>
+    <section class="belownav">
+        <div class="firstsection">
+            <div class="firstpart">
+                <p class="fullname">
+                    Ankur Gandhi
+                    <p class="professionaltitle">
+                        Full Stack Developer
+                    </p>
+                </p>
+            </div> 
+             <div class="secondsection">
+                <div class="secondpart">
+                    <img src="/image/Profile_pic.jpg" alt="Profile_pic" srcset="">
+                </div>
+            </div>
+        </div>
+    </section>
+  <script src ="index.js"></script>
+    <div class="belowbutton">
+        <div class="btn">
+            <a href="mailto:ankurgandhi2720@gmail.com"><button type="Hire">HireMe</button></a>
+            <div id="abc">
+                <!-- Popup Div Starts Here -->
+                <div id="popupContact">
+                <!-- Contact Us Form -->
+                    <form id="form" name="form">
+                        <em class="fa fa-times" id = "cbtn" onclick ="div_hide()"></em>
+                        <h2>Contact Us</h2>
+                        <hr>
+                            <input id="name" name="name" placeholder="Name" type="text" required>
+                            <input id="email" name="email" placeholder="Email" type="text" required>
+                            <textarea id="message" name="message" placeholder="Message" required></textarea>
+                            <a href="javascript:%20check_empty()" onclick="submitalert(this)" id="submit">Send</a>
+                    </form>
+                </div>
+                <!-- Popup Div Ends Here -->
+            </div>
+                <!-- Display Popup Button -->
+            <button id="popup" onclick="div_show()">Feedback</button>
+                <!-- Body Ends Here -->
+
+                <!--from end-->
+        </div>
+    </div>
+
+</body>
+</html>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+<script>
+emailjs.init('i-nHY1O9s5qdms7b9')
+
+function submitalert (event) {
+    const btn = document.getElementById('submit');
+    btn.value = 'Sending...'
+        if(confirm("Do you want to sent Feedback !")) {
+            console.log(location);
+            emailjs.send("service_8sg4not","template_iyusbc7",{
+            to_name: $("#name").val(),
+            from_name: $("#email").val(),
+            message: $("#message").val(),
+            reply_to: "ankurgandhi2720@gmail.com",
+            }).then(function(resp){
+                if (resp) {
+                    var location = "https://mywebsite-9de96.web.app/";
+                    window.location.assign(location);
+                }
+            });
+        }
+    }
+</script>

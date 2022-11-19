@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About-Myself</title>
+</head>
+<style>
+    *{
+  margin: 0;
+  padding: 0;
+}
+body{
+  display: flex;
+  align-items: center;
+  background: #343F4F;
+}
+.wrapper{
+  display: flex;
+  width: max-content;
+  margin: auto;
+}
+.wrapper .static-txt{
+  margin-top: 4rem;
+  color: white;
+  text-align: center;
+  width: 141px;
+  font-size: 62px;
+  font-weight: 400;
+  font-style: oblique;
+}
+.wrapper .dynamic-txts{
+  margin-top: 4rem;
+  margin-left: 2px;
+  height: 78px;
+  line-height: 2rem;
+  overflow: hidden;
+  font-family :monospace;
+}
+.dynamic-txts li{
+  list-style: none;
+  color: #FC6D6D;
+  font-size: 60px;
+  font-weight: 100;
+  position:relative;
+  top:0;
+  animation: slide 12s steps(4) infinite;
+}
+.dynamic-txts{
+    text-align: center;
+}
+.dynamic-txts li
+{
+    padding: 5px;
+}
+@keyframes slide {
+  100%{
+    top: -360px;
+  }
+}
+.dynamic-txts li span{
+  position: relative;
+  margin: 20px 6px;
+  line-height: 80px;
+  overflow: hidden;
+}
+.dynamic-txts li span::after{
+  content: "";
+  position: absolute;
+  left: 0;
+  height: 110%;
+  width: 100%;
+  background: #343F4F;
+  border-left: 1px solid #FC6D6D;;
+  animation: typing 3s steps(10) infinite;
+}
+@keyframes typing {
+  40%, 60%{
+    left: calc(100% + 30px);
+  }
+  100%{
+    left: 0;
+  }
+}
+.wrapper{
+  text-align: center;
+}
+.bigcontent{
+  text-align: center;
+}
+.name{
+   margin-top: 51px;
+   margin-left: -43%;
+    font-size: 60px;
+    color: white;
+    font-family: monospace;
+    text-transform: uppercase;
+}
+.name:hover{
+  text-decoration: underline;
+  color: aqua;
+}
+a:hover{
+  color:white;
+  text-decoration:underline;
+}
+.bigtext{
+  text-align: initial;
+  margin-top: 4%;
+  margin-right: auto;
+  margin-left: auto;
+  font-size: 20px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: yellow;
+}
+span{
+  cursor: pointer;
+  text-decoration: none;
+}
+.greetings{
+  margin-top: 7%;
+  font-size: 1.36em;
+  text-align: center;
+  text-transform :uppercase ;
+  color: aliceblue;
+}
+.greeting{
+  margin-top: 3%;
+  font-size: 42px;
+  color:orange;
+}
+a{
+  text-decoration: none;
+  color: yellow;
+}
+@media only screen and (max-width: 768px) {
+    .self{font-size: 30px}
+    .name{
+      margin-left: -17%;
+    }
+    .greetings{
+      font-size: 25px;
+    }
+}
+</style>
+<body>
+    <div class="bigcontent">
+    <div class="wrapper">
+    <div class="static-txt">I'm a</div>
+    <ul class="dynamic-txts">
+      <li><span>Youtuber</span></li>
+      <li><span>Designer</span></li>
+      <li><span>Developer</span></li>
+      <li><span>Freelancer</span></li>
+    </ul>
+  </div>
+  <div class="self">
+      <p class="name">Ankur Gandhi</p>
+      <p class="greeting">Warm Welcome To ALL !!! (0)_||_(0)</p>
+      <p class="bigtext">
+        
+         20<sup>th</sup>September,2000 my birthday date. 20 years old, Fresher Looking for a good job apportunity. Pursuing (B.Tech) in Computer Science Engineering from <a href="https://ggnindia.dronacharya.info/"><span title="Gurugram, Haryana">Dronacharya College Of Engineering</span></a>.Completed my Higher Secondary Education from <a href="http://www.devsamajvidyaniketangurgaon.com/"><span title="Gurugram, Haryana "> Dev Samaj Vidhya Niketan.</span></a> and secondary education from <a href=""><span title="Gurugram, Haryana ">S.D Memorial Sr. Sec. High School</span></a>. Positive attitude, creative ideas with innovative solutions.Enjoy Challenges and believe in Team work.   
+             </p>
+      <p class="greetings">
+        Thank You !
+      </p>
+  </div>
+  </div>
+</body>
+</html>
