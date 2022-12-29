@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -9,14 +10,21 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <title>my-First-Website</title>
 </head>
+
 <body>
-    <nav class="navbar" >
+    <nav class="navbar">
         <div class="navlist">
             <ul class="list">
-                <a href="aboutme.html"><li>About</li></a>
-                <a href="certificate.html"><li>Certificates</li></a>
-                <a href="documents/AnkurGandhi_SoftwareDeveloper.pdf"><li>Resume</li></a>
-              
+                <a href="aboutme.html">
+                    <li>About</li>
+                </a>
+                <a href="certificate.html">
+                    <li>Certificates</li>
+                </a>
+                <a href="documents/AnkurGandhi_SoftwareDeveloper.pdf">
+                    <li>Resume</li>
+                </a>
+
             </ul>
         </div>
     </nav>
@@ -25,76 +33,77 @@
             <div class="firstpart">
                 <p class="fullname">
                     Ankur Gandhi
-                    <p class="professionaltitle">
-                        Full Stack Developer
-                    </p>
+                <p class="professionaltitle">
+                    Full Stack Developer
                 </p>
-            </div> 
-             <div class="secondsection">
+                </p>
+            </div>
+            <div class="secondsection">
                 <div class="secondpart">
                     <img src="/image/Profile_pic.jpg" alt="Profile_pic" srcset="">
                 </div>
             </div>
         </div>
     </section>
-  <script src ="index.js"></script>
+    <script src="index.js"></script>
     <div class="belowbutton">
         <div class="btn">
             <a href="mailto:ankurgandhi2720@gmail.com"><button type="Hire">HireMe</button></a>
             <div id="abc">
                 <!-- Popup Div Starts Here -->
                 <div id="popupContact">
-                <!-- Contact Us Form -->
+                    <!-- Contact Us Form -->
                     <form id="form" name="form">
-                        <em class="fa fa-times" id = "cbtn" onclick ="div_hide()"></em>
+                        <em class="fa fa-times" id="cbtn" onclick="div_hide()"></em>
                         <h2>Contact Us</h2>
                         <hr>
-                            <input id="name" name="name" placeholder="Name" type="text" required>
-                            <input id="email" name="email" placeholder="Email" type="text" required>
-                            <textarea id="message" name="message" placeholder="Message" required></textarea>
-                            <a href="javascript:%20check_empty()" onclick="submitalert(this)" id="submit">Send</a>
+                        <input id="name" name="name" placeholder="Name" type="text" required>
+                        <input id="email" name="email" placeholder="Email" type="text" required>
+                        <textarea id="message" name="message" placeholder="Message" required></textarea>
+                        <a href="javascript:%20check_empty()" onclick="submitalert(this)" id="submit">Send</a>
                     </form>
                 </div>
                 <!-- Popup Div Ends Here -->
             </div>
-                <!-- Display Popup Button -->
+            <!-- Display Popup Button -->
             <button id="popup" onclick="div_show()">Feedback</button>
-                <!-- Body Ends Here -->
+            <!-- Body Ends Here -->
 
-                <!--from end-->
+            <!--from end-->
         </div>
     </div>
 
 </body>
+
 </html>
 <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
 <script>
-emailjs.init('i-nHY1O9s5qdms7b9')
+    emailjs.init('i-nHY1O9s5qdms7b9')
 
-function submitalert (event) {
-    const btn = document.getElementById('submit');
-    btn.value = 'Sending...'
-    if ($("#name").val() == "") {
-        alert(" Please Enter your Name, Field is mandatory! ");
-        return false;
-    }
-    if ($("#email").val() == "") {
-        alert(" Please Enter a valid Email Address like => xyz@gmail.com, Field is mandatory! ");
-        return false;
-    }
-    if ($("#message").val() == "") {
-        alert("Please write your message here, Field is mandatory! ");
-        return false;
-    }
+    function submitalert(event) {
+        const btn = document.getElementById('submit');
+        btn.value = 'Sending...'
+        if ($("#name").val() == "") {
+            alert(" Please Enter your Name, Field is mandatory! ");
+            return false;
+        }
+        if ($("#email").val() == "") {
+            alert(" Please Enter a valid Email Address like => xyz@gmail.com, Field is mandatory! ");
+            return false;
+        }
+        if ($("#message").val() == "") {
+            alert("Please write your message here, Field is mandatory! ");
+            return false;
+        }
 
-        if(confirm("Do you want to sent Feedback !")) {
+        if (confirm("Do you want to sent Feedback !")) {
             alert(" I RECIEVE YOUR FEEDBACK !, THANK YOU .");
-            emailjs.send("service_8sg4not","template_iyusbc7",{
-            to_name: $("#name").val(),
-            from_name: $("#email").val(),
-            message: $("#message").val(),
-            reply_to: "ankurgandhi2720@gmail.com",
-            }).then(function(resp){
+            emailjs.send("service_8sg4not", "template_iyusbc7", {
+                to_name: $("#name").val(),
+                from_name: $("#email").val(),
+                message: $("#message").val(),
+                reply_to: "ankurgandhi2720@gmail.com",
+            }).then(function (resp) {
                 if (resp) {
                     var location = "https://mywebsite-9de96.web.app/";
                     window.location.assign(location);
