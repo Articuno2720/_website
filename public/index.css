@@ -2,6 +2,7 @@
     margin: 0%;
     padding: 0%;
 }
+html, body {width: auto!important; overflow-x: hidden!important} 
 body{
     background-image: url(image/6.jpg);
     background-color:black;
@@ -256,26 +257,19 @@ img{
     margin-left: 40px;
 }
 */
-.firstsection{
-    box-sizing: border-box;
-    display: flex;
-    /* margin-right: 2rem; */
-}
-.belownav{
-    margin-top: 150px;
-}
+
 .firstpart{
     color: white;
     margin-left: 450px;
 }
 .fullname{
     font-size: 65px;
-    letter-spacing: 4px;
+    letter-spacing: 3px;
 }
  .professionaltitle{
     font-size: 25px;
     margin: 0%;
-    letter-spacing: 4px;
+    letter-spacing: 2px;
     font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 .secondsection{
@@ -291,7 +285,7 @@ img{
 }
 button{
     background: none;
-    letter-spacing: 6px;
+    letter-spacing: 4px;
     color: white;
     border: 2px aqua solid;
     border-radius: 20px;
@@ -304,10 +298,14 @@ button:hover{
 }
 .fullname:hover{
     color: aqua;
-   
+    text-shadow: 1px 1px 2px black, 0 0 1em aqua, 0 0 0.2em aqua;
+    color: white;
+
 }
 .professionaltitle:hover{
     color: aqua;
+    text-shadow: 1px 1px 2px black, 0 0 1em aqua, 0 0 0.2em aqua;
+    color: white;
 }
 .belowbutton{
     display: flex;
@@ -320,44 +318,49 @@ button:hover{
     display: flex;
 }
 
-@media(max-width: 767px) {
-    .firstpart{
-        margin: 0%;
+.title > p{
+    color: white;
+}
+.firstsection {
+    display: flex;
+    margin:  100px 500px ;
+}
+/* @media only screen and (max-width: 600px) {
+    
+    .list li {
+        font-size: 20px;
     }
-    .fullname{
-        margin-left: -90px;
-        font-size: 70px;
-        font-weight:lighter;
+    .firstpart {
+        margin-left: 12px;
     }
-    .professionaltitle{
-        padding-left: 25px;
+    .fullname {
+        font-size: 50px;
+    }
+    .professionaltitle {
+        font-size: 17px;
         width: max-content;
     }
-    .belowbutton{
-        margin: 0%;
-    }
-    img{
-        width: 130px;
-        margin-top: 40px;
-        margin-left: -90px;
+    .btn{
+        margin-left: 12px;
     }
 }
-@media(max-width: 867px) {
-    .firstpart{
-        margin-left: 90px;
+*/
+
+@media only screen and (min-width: 1px) and (max-width: 1590px) {
+    body {
+        display: none;
     }
-    .fullname{
-        margin-left: -40px;
-        font-size: 70px;
-        font-weight:lighter;
+    html {
+        background: #FEFFED;
     }
-    .professionaltitle{
-        margin-left: -90px;
-        font-size: 25px;
-        font-weight: 400;
-        padding-left: 55px;
+
+    html::after {content: "This Website can only view in Desktop Mode !"; color: red; font-size: 21px;
+        
     }
-    .belowbutton{
-        margin: 0%;
+    body::after {
+        background-image: url('https://www.freeiconspng.com/uploads/alert-icon-png-red-alert-round-icon-clip-art-3.png');
     }
 }
+
+
+/* new css */
